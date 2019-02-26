@@ -1,0 +1,1 @@
+json.all_contacts @person
