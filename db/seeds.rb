@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
-25.times do
+100.times do
   Contact.create([{
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,

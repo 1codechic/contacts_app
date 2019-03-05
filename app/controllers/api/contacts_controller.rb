@@ -1,8 +1,8 @@
 class Api::ContactsController < ApplicationController
 
-  def get_contact
-    @person = Contact.first
-    render 'contact_view.json.jbuilder'
+  def index
+    @contacts = Contact.all
+    render 'index.json.jbuilder'
   end
 
   def all_contacts
