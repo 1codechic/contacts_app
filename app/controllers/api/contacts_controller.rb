@@ -2,8 +2,12 @@ class Api::ContactsController < ApplicationController
 
   def index
     #shows only contacts of the current logged in user
-    @contacts = current_user.contacts
-    render 'index.json.jbuilder'
+    if current_user
+      @contacts = current_user.contacts
+      render 'index.json.jbuilder'
+    else
+      render json: ["You must login to see your contacts"]
+    end
   end
 
   def show
