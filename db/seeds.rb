@@ -5,14 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+# require 'faker'
 
-100.times do
-  Contact.create([{
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.free_email,
-    phone_number: Faker::PhoneNumber.phone_number
-  }])
+# 100.times do
+#   Contact.create([{
+#     first_name: Faker::Name.first_name,
+#     last_name: Faker::Name.last_name,
+#     email: Faker::Internet.free_email,
+#     phone_number: Faker::PhoneNumber.phone_number
+#   }])
+# end
+
+contacts = Contact.all
+
+contacts.each do |contact|
+  id_from_user = User.all.sample.id
+  contact.update!(user_id: id_from_user)
 end
 
