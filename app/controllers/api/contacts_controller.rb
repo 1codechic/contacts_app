@@ -1,14 +1,14 @@
 class Api::ContactsController < ApplicationController
 
   def index
-    @contacts = Contact.all
+    #shows only contacts of the current logged in user
+    @contacts = current_user.contacts
     render 'index.json.jbuilder'
   end
 
   def show
     p 'current user'
     p current_user
-
     contact_id = params[:id]
     @contact = Contact.find_by(id: contact_id)
     render 'show.json.jbuilder'
