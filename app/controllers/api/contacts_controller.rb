@@ -6,6 +6,9 @@ class Api::ContactsController < ApplicationController
   end
 
   def show
+    p 'current user'
+    p current_user
+
     contact_id = params[:id]
     @contact = Contact.find_by(id: contact_id)
     render 'show.json.jbuilder'
