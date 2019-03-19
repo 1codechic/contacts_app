@@ -1,13 +1,17 @@
 class Api::ContactsController < ApplicationController
 
   def index
+    group = Group.find_by(name: params[:group])
+
+    @contact = group.contacts
+    render 'index.json.jbuilder'
     #shows only contacts of the current logged in user
-    if current_user
-      @contacts = current_user.contacts
-      render 'index.json.jbuilder'
-    else
-      render json: ["You must login to see your contacts"]
-    end
+    # if current_user
+    #   @contacts = current_user.contacts
+    #   render 'index.json.jbuilder'
+    # else
+    #   render json: ["You must login to see your contacts"]
+    # end
   end
 
   def show
