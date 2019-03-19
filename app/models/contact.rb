@@ -9,6 +9,8 @@ end
 
 class Contact < ApplicationRecord
   belongs_to :user
+  has_many :relationships
+  has_many :groups, through: :relationships
   
   # validates :first_name, presence:true
   # validates :last_name, presence:true
