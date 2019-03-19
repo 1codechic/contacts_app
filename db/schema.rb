@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_19_013904) do
+ActiveRecord::Schema.define(version: 2019_03_19_014045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2019_03_19_013904) do
     t.string "middle_name"
     t.text "bio"
     t.integer "user_id"
-    t.integer "group_id"
   end
 
   create_table "groups", force: :cascade do |t|
