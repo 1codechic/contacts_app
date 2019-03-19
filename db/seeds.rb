@@ -16,10 +16,22 @@
 #   }])
 # end
 
-contacts = Contact.all
+# contacts = Contact.all
 
-contacts.each do |contact|
-  id_from_user = User.all.sample.id
-  contact.update!(user_id: id_from_user)
-end
+# contacts.each do |contact|
+#   id_from_user = User.all.sample.id
+#   contact.update!(user_id: id_from_user)
+# end
+
+family = Group.create(name: "family")
+family.save
+
+friends = Group.create(name: "friends")
+friends.save
+
+business = Group.create(name: "business")
+business.save
+
+
+
 
