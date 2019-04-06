@@ -8,7 +8,7 @@ class EmailValidator < ActiveModel::EachValidator
 end
 
 class Contact < ApplicationRecord
-  #belongs_to :user
+  belongs_to :user
   has_many :relationships
   has_many :groups, through: :relationships
   
