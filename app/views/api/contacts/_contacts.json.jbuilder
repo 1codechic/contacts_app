@@ -6,5 +6,5 @@ json.email contact.email
 json.phone_number contact.phone_number
 json.bio contact.bio
 json.time_updated contact.friendly_updated_at
-json.user current_user
+#json.user current_user
 #json.group contact.relationships

@@ -27,7 +27,8 @@ class Api::ContactsController < ApplicationController
       middle_name: params[:middle_name],
       email: params[:email],
       phone_number: params[:phone_number],
-      bio: params[:bio]
+      bio: params[:bio],
+      user_id: User.first.id
     })
     if @contact.save
       render 'show.json.jbuilder'
